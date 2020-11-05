@@ -1,0 +1,71 @@
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+storage/
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# Ignore bundler config.
+/.bundle
+/vendor
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# JetBrains IDE folder
+.idea/*
+.idea/
+.vscode/
+.vscode/*
+
+# Config backups
+config/database.yml~
+config/secrets.yml~
+config/application.yml~
+
+# ERD
+./erd.pdf
+erd.pdf
+./erd.dot
+erd.dot
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore application configuration
+/config/application.yml
+
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+#machine files
+.DS_Store
+
+/config/master.key
+
+/config/credentials/staging.key
