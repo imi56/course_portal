@@ -1,4 +1,4 @@
-class FuturelearnApiClient < BaseApiClient
+class FuturelearnAPIClient < BaseAPIClient
   BASE_URL = 'https://www.futurelearn.com'
   def self.fetch
     puts 'Fetching...'

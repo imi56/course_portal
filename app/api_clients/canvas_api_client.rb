@@ -1,4 +1,4 @@
-class CanvasApiClient < BaseApiClient
+class CanvasAPIClient < BaseAPIClient
   BASE_URL = 'https://www.canvas.net'
   def self.fetch
     puts 'Fetching...'

@@ -1,4 +1,4 @@
-class BaseApiClient
+class BaseAPIClient
   def self.get(url) 
     response = Typhoeus::Request.get(url) 
     parse_json_response(response)
