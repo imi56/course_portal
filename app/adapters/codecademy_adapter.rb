@@ -1,6 +1,6 @@
 class CodecademyAdapter
   def self.get_formatted_data
-    response = CodecademyApiClient.fetch
+    response = CodecademyAPIClient.fetch
     format_response(response['entities']['paths']['byId'].values)
   end
 

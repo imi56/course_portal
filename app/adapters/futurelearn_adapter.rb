@@ -1,6 +1,6 @@
 class FuturelearnAdapter
   def self.get_formatted_data
-    response = FuturelearnApiClient.fetch
+    response = FuturelearnAPIClient.fetch
     format_response(response)
   end
 

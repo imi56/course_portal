@@ -1,6 +1,6 @@
 class CanvasAdapter
   def self.get_formatted_data
-    response = CanvasApiClient.fetch
+    response = CanvasAPIClient.fetch
     format_response(response['products'])
   end
 
