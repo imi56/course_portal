@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_170926) do
+ActiveRecord::Schema.define(version: 2020_11_06_000849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "otps", force: :cascade do |t|
+    t.string "phone", null: false
+    t.string "password", null: false
+    t.string "expiry", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["phone"], name: "index_otps_on_phone"
+  end
 
   create_table "products", force: :cascade do |t|
     t.text "title", null: false
@@ -27,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_11_05_170926) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["provider_resource_id", "provider"], name: "index_products_on_provider_resource_id_and_provider", unique: true
     t.index ["title"], name: "index_products_on_title"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["phone"], name: "index_users_on_phone"
   end
 
 end
