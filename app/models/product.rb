@@ -1,5 +1,5 @@
-class Product < ApplicationRecord
-  DEFAULT_LIMIT = 2
+class Product < ApplicationRecord  
+  DEFAULT_LIMIT = 5
   validates_presence_of :title, :image_url, :description, :provider, :provider_resource_id
   validates_uniqueness_of :provider_resource_id, scope: :provider
 

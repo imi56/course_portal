@@ -1,4 +1,6 @@
 class ProductsController < APIController
+  before_action :authenticate_user!
+
   def index
     offset = params[:offset].to_i
     prods = Product.limit(limit).offset(offset).order(:id)
