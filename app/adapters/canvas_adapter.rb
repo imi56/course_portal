@@ -18,7 +18,8 @@ class CanvasAdapter
         provider: 'canvas',
         provider_resource_id: prod['id'],
         created_at: time,
-        updated_at: time
+        updated_at: time,
+        resource_url: prod['url']
       }
     end
     

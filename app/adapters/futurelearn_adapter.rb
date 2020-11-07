@@ -16,7 +16,8 @@ class FuturelearnAdapter
         provider: 'futurelearn',
         provider_resource_id: prod['uuid'],
         created_at: time,
-        updated_at: time
+        updated_at: time,
+        resource_url: prod['url']
       }
     end
     

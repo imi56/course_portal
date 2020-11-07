@@ -7,7 +7,7 @@ class Product < ApplicationRecord
 
   def product_json
     self.as_json(
-      only: [:id, :title, :description, :image_url, :price, :type, :provider, :provider_resource_id]
+      only: [:id, :title, :description, :image_url, :price, :type, :provider, :provider_resource_id, :resource_url]
     )
   end
 
