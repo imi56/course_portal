@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post 'login' => 'authentication#login'
   post 'sign_up' => 'authentication#sign_up'
   resources :otps, only: [:create]
+  resources :products, only: [:index]
 end
