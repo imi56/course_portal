@@ -14,7 +14,7 @@ class CanvasAdapter
         title: prod['title'],
         description: prod['teaser'],
         price: prod['priceWithCurrency'], #includes currency symbol, ideally currency & price should be separate
-        type: prod['type'],
+        product_type: prod['type'].to_s.downcase,
         provider: 'canvas',
         provider_resource_id: prod['id'],
         created_at: time,

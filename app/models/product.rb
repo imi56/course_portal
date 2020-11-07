@@ -3,11 +3,11 @@ class Product < ApplicationRecord
   validates_presence_of :title, :image_url, :description, :provider, :provider_resource_id
   validates_uniqueness_of :provider_resource_id, scope: :provider
 
-  enum product_type: ['Course']
+  enum product_type: ['course']
 
   def product_json
     self.as_json(
-      only: [:id, :title, :description, :image_url, :price, :type, :provider, :provider_resource_id, :resource_url]
+      only: [:id, :title, :description, :image_url, :price, :product_type, :provider, :provider_resource_id, :resource_url]
     )
   end
 
