@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root :to => 'application#api'
   post 'login' => 'authentication#login'
   post 'sign_up' => 'authentication#sign_up'
-  resources :otps, only: [:create]
+  resources :otps, :ratings, only: [:create]
   resources :products, only: [:index]
 end

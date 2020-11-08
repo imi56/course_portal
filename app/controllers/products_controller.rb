@@ -5,7 +5,7 @@ class ProductsController < APIController
     offset = params[:offset].to_i
     prods = Product.limit(limit).offset(offset).order(:id)
     response = {
-      products: prods.map { |prod| prod.product_json } ,
+      products: prods.map { |prod| prod.product_json_for(current_user) } ,
       product_count: Product.count
     }
     render_success(response)
