@@ -8,10 +8,6 @@ class Product < ApplicationRecord
 
   enum product_type: ['course']
 
-  def avg_rating
-    ratings.average(:rating).to_f
-  end
-
   def user_rating
     rating = ratings.find_by(user_id: user_id_for_rating)
     return {} unless rating
@@ -22,7 +18,7 @@ class Product < ApplicationRecord
     self.user_id_for_rating = user.id
     self.as_json(
       only: [:id, :title, :description, :image_url, :price, :product_type, :provider, :provider_resource_id, :resource_url],
-      methods: [:avg_rating, :user_rating]
+      methods: [:user_rating]
     )
   end
 

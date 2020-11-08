@@ -4,6 +4,7 @@ class RatingsController < APIController
 
   def create
     rating = Rating.find_or_initialize_by(id: params[:id].to_i)
+    rating.user_id = current_user.id
     rating.assign_attributes(create_params)
     if rating.valid?
       rating.save!
