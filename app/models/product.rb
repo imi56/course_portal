@@ -1,4 +1,5 @@
 class Product < ApplicationRecord  
+  include Filterable
   attr_accessor :user_id_for_rating
   DEFAULT_LIMIT = 5
   validates_presence_of :title, :image_url, :description, :provider, :provider_resource_id
@@ -7,6 +8,9 @@ class Product < ApplicationRecord
   has_many :ratings
 
   enum product_type: ['course', "n/a"]
+  scope :provider, -> (provider) { where(provider: provider) }
+  scope :type, -> (type) { where(product_type: type) }
+
 
   def user_rating
     rating = ratings.find_by(user_id: user_id_for_rating)
