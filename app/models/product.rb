@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   has_many :ratings
 
-  enum product_type: ['course']
+  enum product_type: ['course', "n/a"]
 
   def user_rating
     rating = ratings.find_by(user_id: user_id_for_rating)

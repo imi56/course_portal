@@ -16,7 +16,8 @@ class CodecademyAdapter
         provider: 'codecademy',
         provider_resource_id: prod['id'],
         created_at: time,
-        updated_at: time
+        updated_at: time,
+        product_type: "n/a"
       }
     end
     
