@@ -1,7 +1,7 @@
 class Product < ApplicationRecord  
   include Filterable
   attr_accessor :user_id_for_rating
-  DEFAULT_LIMIT = 5
+  DEFAULT_LIMIT = 10
   validates_presence_of :title, :image_url, :description, :provider, :provider_resource_id
   validates_uniqueness_of :provider_resource_id, scope: :provider
 

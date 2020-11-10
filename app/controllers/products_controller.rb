@@ -3,10 +3,14 @@ class ProductsController < APIController
 
   def index
     offset = params[:offset].to_i
-    prods = Product.filters(filter_params).limit(limit).offset(offset).order(:id)
+    prods = Product.filters(filter_params)
+    product_count = prods.size
+    prods = prods.limit(limit).offset(offset).order(:id)
     response = {
       products: prods.map { |prod| prod.product_json_for(current_user) } ,
-      product_count: Product.count
+      product_count: product_count,
+      type_options: Product.pluck(:product_type).uniq,
+      provider_options: Product.pluck(:provider).uniq
     }
     render_success(response)
   end
